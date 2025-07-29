@@ -10,9 +10,6 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@ahultgren/vue3-swipe-actions": "^0.0.6",
-    "@heroicons/vue": "^2.2.0",
-    "@imengyu/vue3-context-menu": "^1.4.6",
     "@tailwindcss/vite": "^4.0.15",
     "@vee-validate/zod": "^4.15.0",
     "@vueuse/components": "^13.0.0",
