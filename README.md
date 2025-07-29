@@ -2,22 +2,16 @@
 
 This project is a work-in-progress replacement for the default qBittorrent Web UI, featuring a Vue 3 frontend and a FastAPI backend. The UI is designed with shadcn components for a clean look.
 
----
-
 ## Features
 
 * **Modern UI**: Built with Vue 3, Pinia, Tailwind, and shadcn components.
 * **FastAPI Backend**: Provides a lightweight API layer.
 * **Real-Time Updates**: The frontend polls progress from the backend for download progress, search results, etc.
 
----
-
 ## Tech Stack
 
 * **Frontend**: [Vue 3](https://vuejs.org/), [Vite](https://vite.dev/), [shadcn/ui](https://ui.shadcn.com/), [npm](https://www.npmjs.com/)
 * **Backend**: [FastAPI](https://fastapi.tiangolo.com/), [Uvicorn](https://www.uvicorn.org/), [UV](https://docs.astral.sh/uv/)
-
----
 
 ## Getting Started
 
@@ -27,8 +21,6 @@ This project is a work-in-progress replacement for the default qBittorrent Web U
 * **Python** (>= 3.11)
 * **npm** for frontend
 * **UV** for backend
-
----
 
 ## Frontend Setup
 
@@ -55,8 +47,6 @@ This will start the Vite development server with hot reloading.
 npm run build
 ```
 
----
-
 ## Backend Setup
 
 The backend is a FastAPI app served via Uvicorn.
@@ -73,8 +63,6 @@ uv sync
 python main.py
 ```
 
----
-
 ## Project Structure
 
 ```
@@ -86,8 +74,6 @@ qbui/
 │   └── main.py
 └── README.md
 ```
-
----
 
 ## Future Enhancements
 
