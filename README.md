@@ -6,7 +6,6 @@ This project is a work-in-progress replacement for the default qBittorrent Web U
 
 * **Modern UI**: Built with Vue 3, Pinia, Tailwind, and shadcn components.
 * **FastAPI Backend**: Provides a lightweight API layer.
-* **Real-Time Updates**: The frontend polls progress from the backend for download progress, search results, etc.
 
 ## Tech Stack
 
