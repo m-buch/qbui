@@ -59,11 +59,11 @@ const formUrlEncodedRequest = async (endpoint, params = {}) => {
 // Torrent API
 export const torrentsApi = {
   // Get all torrents
-  getAll: () => apiRequest('/api/torrents'),
+  getAll: () => apiRequest('/torrents/info'),
 
   // Add a new torrent
   add: (formData) =>
-    apiRequest('/api/torrents/add', {
+    apiRequest('/torrents/add', {
       method: 'POST',
       body: formData,
       headers: {},
@@ -71,51 +71,51 @@ export const torrentsApi = {
 
   // Pause a torrent
   pause: (hash) =>
-    formUrlEncodedRequest('/api/torrents/pause', {
+    formUrlEncodedRequest('/torrents/pause', {
       hashes: hash,
     }),
 
   // Resume a torrent
   resume: (hash) =>
-    formUrlEncodedRequest('/api/torrents/resume', {
+    formUrlEncodedRequest('/torrents/resume', {
       hashes: hash,
     }),
 
   // Recheck a torrent
   recheck: (hash) =>
-    formUrlEncodedRequest('/api/v2/torrents/recheck', {
+    formUrlEncodedRequest('/torrents/recheck', {
       hashes: hash,
     }),
 
   // Delete a torrent
   delete: (hash, deleteFiles = false) =>
-    formUrlEncodedRequest('/api/torrents/delete', {
+    formUrlEncodedRequest('/torrents/delete', {
       hashes: hash,
       deleteFiles: deleteFiles,
     }),
 
-  getCategories: () => apiRequest('/api/v2/torrents/categories'),
+  getCategories: () => apiRequest('/torrents/categories'),
 
   setCategory: (hashes, category) =>
-    formUrlEncodedRequest('/api/v2/torrents/setCategory', {
+    formUrlEncodedRequest('/torrents/setCategory', {
       hashes: Array.isArray(hashes) ? hashes.join('|') : hashes,
       category,
     }),
-  
+
   addCategory: (category, savePath) =>
-    formUrlEncodedRequest('/api/v2/torrents/createCategory', {
+    formUrlEncodedRequest('/torrents/createCategory', {
       category,
       savePath,
     }),
-  
+
   editCategory: (category, savePath) =>
-    formUrlEncodedRequest('/api/v2/torrents/editCategory', {
+    formUrlEncodedRequest('/torrents/editCategory', {
       category,
       savePath,
     }),
-  
+
   removeCategories: (categories) =>
-    formUrlEncodedRequest('/api/v2/torrents/removeCategories', {
+    formUrlEncodedRequest('/torrents/removeCategories', {
       categories: Array.isArray(categories) ? categories.join('\n') : categories,
     }),
 }
@@ -123,37 +123,44 @@ export const torrentsApi = {
 // Search API
 export const searchApi = {
   start: (pattern) =>
-    apiRequest('/api/search/start', {
-      method: 'POST',
-      body: JSON.stringify({ pattern }),
+    formUrlEncodedRequest('/search/start', {
+      pattern,
+      plugins: 'all',
+      category: 'all',
     }),
-  status: (id) => apiRequest(`/api/search/status?id=${id}`),
-  results: (id) => apiRequest(`/api/search/results?id=${id}`),
+  status: (id) => apiRequest(`/search/status?id=${id}`),
+  results: (id) => apiRequest(`/search/results?id=${id}`),
   stop: ({ id }) =>
-    apiRequest('/api/search/stop', {
-      method: 'POST',
-      body: JSON.stringify({ id }),
+    formUrlEncodedRequest('/search/stop', {
+      id,
     }),
   delete: ({ id }) =>
-    apiRequest('/api/search/delete', {
-      method: 'POST',
-      body: JSON.stringify({ id }),
+    formUrlEncodedRequest('/search/delete', {
+      id,
     }),
 }
 
 // Auth API
 export const authApi = {
   login: async (username, password) => {
-    return await apiRequest('/api/login', {
+    const body = new URLSearchParams()
+    body.append('username', username)
+    body.append('password', password)
+    const result = await apiRequest('/auth/login', {
       method: 'POST',
-      body: JSON.stringify({ username, password }),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString(),
     })
+    if (result !== 'Ok.') {
+      throw new Error(result || 'Login failed')
+    }
+    return result
   },
-  logout: () => apiRequest('/api/logout', { method: 'POST' }),
+  logout: () => apiRequest('/auth/logout', { method: 'POST' }),
   checkAuth: async () => {
     try {
-      const result = await apiRequest('/api/check-auth')
-      return result.authenticated
+      await apiRequest('/app/version')
+      return true
     } catch (error) {
       console.error('Authentication check failed:', error)
       return false
@@ -163,5 +170,5 @@ export const authApi = {
 
 // System info API
 export const systemApi = {
-  getInfo: () => apiRequest('/api/system/info'),
+  getInfo: () => apiRequest('/transfer/info'),
 }
