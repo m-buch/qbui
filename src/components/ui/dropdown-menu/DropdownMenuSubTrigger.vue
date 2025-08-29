@@ -1,0 +1,34 @@
+<script setup>
+import { cn } from '@/lib/utils'
+import { reactiveOmit } from '@vueuse/core'
+import { ChevronRight } from 'lucide-vue-next'
+import { DropdownMenuSubTrigger, useForwardProps } from 'reka-ui'
+
+const props = defineProps({
+  disabled: { type: Boolean, required: false },
+  textValue: { type: String, required: false },
+  asChild: { type: Boolean, required: false },
+  as: { type: null, required: false },
+  class: { type: null, required: false },
+  inset: { type: Boolean, required: false },
+})
+
+const delegatedProps = reactiveOmit(props, 'class', 'inset')
+const forwardedProps = useForwardProps(delegatedProps)
+</script>
+
+<template>
+  <DropdownMenuSubTrigger
+    data-slot="dropdown-menu-sub-trigger"
+    v-bind="forwardedProps"
+    :class="
+      cn(
+        'focus:bg-neutral-100 focus:text-neutral-900 data-[state=open]:bg-neutral-100 data-[state=open]:text-neutral-900 flex cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden select-none data-[inset]:pl-8 dark:focus:bg-neutral-800 dark:focus:text-neutral-50 dark:data-[state=open]:bg-neutral-800 dark:data-[state=open]:text-neutral-50',
+        props.class,
+      )
+    "
+  >
+    <slot />
+    <ChevronRight class="ml-auto size-4" />
+  </DropdownMenuSubTrigger>
+</template>
