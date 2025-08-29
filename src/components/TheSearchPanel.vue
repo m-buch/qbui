@@ -3,14 +3,14 @@
     <!-- Search Input -->
     <div class="mb-4 px-4 md:px-0">
       <div class="flex items-center justify-between gap-4">
-        <div class="flex items-center gap-2">
+        <div class="flex items-center gap-1">
           <Button
             variant="ghost"
             size="icon"
             class="rounded-full text-neutral-400 hover:text-white hover:bg-neutral-800"
             @click="ui.setActivePanel('torrents')"
           >
-            <ArrowLeft class="size-5" />
+            <ChevronLeft class="size-6" />
           </Button>
           <h2 class="text-xl font-light text-white hidden md:block">Search Trackers</h2>
         </div>
@@ -166,7 +166,7 @@ import { useSearchStore } from '@/stores/search'
 import { useUiStore } from '@/stores/ui'
 import { Input } from '@/components/ui/input'
 import { formatSize } from '@/utils/formatters'
-import { ChevronDown, ChevronUp, Search, X, ArrowLeft } from 'lucide-vue-next'
+import { ChevronDown, ChevronUp, Search, X, ChevronLeft } from 'lucide-vue-next'
 import {
   ContextMenu,
   ContextMenuTrigger,
