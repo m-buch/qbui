@@ -41,7 +41,7 @@
           <DropdownMenuContent
             class="w-40 dark:bg-neutral-800/80 dark:backdrop-blur-sm dark:border-neutral-700"
           >
-            <DropdownMenuItem @click="openSettings" class="hover:bg-neutral-600">
+            <DropdownMenuItem @click="ui.setActivePanel('settings')" class="hover:bg-neutral-600">
               Settings
               <DropdownMenuShortcut>⇧⌘S</DropdownMenuShortcut>
             </DropdownMenuItem>
@@ -73,8 +73,4 @@ import { Button } from '@/components/ui/button'
 
 const auth = useAuthStore()
 const ui = useUiStore()
-
-function openSettings() {
-  ui.setActivePanel('settings')
-}
 </script>

@@ -1,6 +1,5 @@
 <template>
   <div class="speed-graph-container px-2 pb-4 border-b border-neutral-700">
-    <!-- One-line download/upload display -->
     <div class="flex items-center justify-between text-white text-sm font-medium mb-2">
       <div class="flex items-center gap-2">
         <ArrowDown class="size-5 text-blue-400" />
@@ -55,8 +54,8 @@ const chartReady = ref(false)
 
 const createGradient = (ctx, color) => {
   const gradient = ctx.createLinearGradient(0, 0, 0, 80)
-  gradient.addColorStop(0, `${color}80`) // 50% opacity
-  gradient.addColorStop(1, `${color}00`) // 0% opacity
+  gradient.addColorStop(0, `${color}80`)
+  gradient.addColorStop(1, `${color}00`)
   return gradient
 }
 
