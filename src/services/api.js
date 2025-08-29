@@ -172,3 +172,12 @@ export const authApi = {
 export const systemApi = {
   getInfo: () => apiRequest('/transfer/info'),
 }
+
+// Settings API
+export const settingsApi = {
+  getPreferences: () => apiRequest('/app/preferences'),
+  setPreferences: (prefs) =>
+    formUrlEncodedRequest('/app/setPreferences', {
+      json: JSON.stringify(prefs),
+    }),
+}
