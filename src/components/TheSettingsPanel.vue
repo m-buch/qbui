@@ -12,9 +12,9 @@
       <h2 class="text-xl font-light text-white hidden md:block">Settings</h2>
     </div>
     <div class="px-4 md:px-0">
-      <Tabs v-model="activeTab" class="space-y-4">
+      <Tabs v-model="activeTab">
         <TabsList>
-          <TabsTrigger v-for="cat in settingsSchema" :key="cat.id" :value="cat.id" class="text-neutral-300 hover:bg-neutral-700 data-[state=active]:bg-neutral-700">
+          <TabsTrigger v-for="cat in settingsSchema" :key="cat.id" :value="cat.id" class="mx-0.5 text-neutral-200 hover:bg-neutral-700 data-[state=active]:bg-neutral-700">
             {{ cat.label }}
           </TabsTrigger>
         </TabsList>

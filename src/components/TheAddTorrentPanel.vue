@@ -23,7 +23,7 @@
               v-model="links"
               rows="4"
               placeholder="magnet:?xt=urn:btih:..."
-              class="resize-y w-full h-48 text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:focus-visible:outline-none dark:focus-visible:ring-[1.5px] dark:focus-visible:ring-blue-500"
+              class="resize-y w-full h-48 text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
             />
           </div>
           <div>
@@ -82,7 +82,7 @@
                     type="number"
                     v-model="upLimit"
                     placeholder=""
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -94,7 +94,7 @@
                     type="number"
                     v-model="dlLimit"
                     placeholder=""
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -107,7 +107,7 @@
                     step="0.1"
                     v-model="ratioLimit"
                     placeholder=""
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -119,7 +119,7 @@
                     type="number"
                     v-model="seedingTimeLimit"
                     placeholder=""
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
               </CollapsibleContent>
@@ -145,7 +145,7 @@
                     id="savePath"
                     v-model="savePath"
                     placeholder="/downloads"
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -154,7 +154,7 @@
                     id="cookie"
                     v-model="cookie"
                     placeholder="ui=28979218048197"
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -163,7 +163,7 @@
                     id="category"
                     v-model="category"
                     placeholder="movies"
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -172,7 +172,7 @@
                     id="tags"
                     v-model="tags"
                     placeholder="tag1,tag2"
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
@@ -183,7 +183,7 @@
                     id="rename"
                     v-model="rename"
                     placeholder="New name"
-                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50"
+                    class="text-sm text-white dark:placeholder-neutral-500 border dark:border-neutral-800 dark:bg-neutral-950/50 focus-visible:ring-blue-500 focus-visible:ring-[1px]"
                   />
                 </div>
                 <div>
