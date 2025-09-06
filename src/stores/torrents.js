@@ -9,6 +9,13 @@ export const useTorrentStore = defineStore('torrents', {
     all: [],
     categories: {},
     selected: null,
+    details: {
+      properties: null,
+      trackers: [],
+      peers: [],
+      webseeds: [],
+      files: [],
+    },
     searchQuery: '',
     sortBy: 'progress',
     sortDir: 'desc',
@@ -176,6 +183,28 @@ export const useTorrentStore = defineStore('torrents', {
       }
     },
 
+    async fetchDetails(hash) {
+      if (!hash) return
+      try {
+        const [properties, trackers, peersData, webseeds, files] = await Promise.all([
+          torrentsApi.properties(hash),
+          torrentsApi.trackers(hash),
+          torrentsApi.peers(hash),
+          torrentsApi.webseeds(hash),
+          torrentsApi.files(hash),
+        ])
+        this.details = {
+          properties,
+          trackers,
+          peers: peersData?.peers ? Object.values(peersData.peers) : [],
+          webseeds,
+          files,
+        }
+      } catch (err) {
+        console.error('Error fetching torrent details:', err)
+      }
+    },
+
     async fetchCategories() {
       try {
         const response = await torrentsApi.getCategories()
@@ -237,10 +266,18 @@ export const useTorrentStore = defineStore('torrents', {
 
     selectTorrent(torrent) {
       this.selected = torrent
+      if (torrent) this.fetchDetails(torrent.hash)
     },
 
     clearSelection() {
       this.selected = null
+      this.details = {
+        properties: null,
+        trackers: [],
+        peers: [],
+        webseeds: [],
+        files: [],
+      }
     },
 
     setSearch(query) {

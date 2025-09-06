@@ -9,7 +9,7 @@
         <SidebarGroupContent>
           <SidebarMenu>
             <SidebarMenuItem>
-              <div class="flex justify-end">
+              <div class="flex">
                 <SidebarTrigger
                   class="p-4 hover:bg-neutral-700/70 text-blue-400 hover:text-blue-400 group cursor-pointer"
                 >

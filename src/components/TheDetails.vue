@@ -1,8 +1,8 @@
 <template>
-  <ScrollArea class="h-full w-full bg-neutral-800/50">
-    <div class="p-4 h-full">
+  <ScrollArea class="h-full w-full bg-neutral-900/30">
+    <div class="h-full">
       <div v-if="!torrent" class="h-full flex items-center justify-center text-gray-400">
-        <div class="flex flex-col items-center gap-2 my-16">
+        <div class="flex flex-col items-center my-16">
           <p class="text-lg font-semibold">No torrent selected</p>
           <p class="text-sm">Select a torrent to view details</p>
         </div>

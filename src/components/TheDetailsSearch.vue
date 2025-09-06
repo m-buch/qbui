@@ -1,5 +1,5 @@
 <template>
-  <div class="space-y-4">
+  <div class="space-y-4 p-4">
     <!-- Torrent Name -->
     <div>
       <h3 class="text-base font-medium leading-tight">{{ torrent.name }}</h3>

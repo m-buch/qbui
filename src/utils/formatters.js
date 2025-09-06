@@ -34,6 +34,20 @@ export const formatETA = (seconds) => {
   }
 }
 
+export const formatDuration = (seconds) => {
+  if (!seconds && seconds !== 0) return '0s'
+  const h = Math.floor(seconds / 3600)
+  const m = Math.floor((seconds % 3600) / 60)
+  return h > 0 ? `${h}h ${m}m` : `${m}m`
+}
+
+export const formatTimestamp = (ts) => (ts ? new Date(ts * 1000).toLocaleString() : '')
+
+export const formatLimit = (limit) => {
+  if (limit === undefined || limit === -1) return '∞'
+  return formatSpeed(limit)
+}
+
 export const formatState = (state) => {
   const stateMap = {
     error: 'Error',

@@ -1,10 +1,10 @@
 <template>
   <div>
     <Toaster position="bottom-right" theme="dark" />
-    <div class="p-0 md:p-6">
+    <div class="p-0 md:p-4">
       <!-- Header with Title and Search -->
       <div
-        class="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 px-4 md:px-0"
+        class="flex flex-col md:flex-row items-start md:items-center justify-between mb-2 px-4 md:px-0"
       >
         <h2 class="text-xl font-light text-white mb-2 md:mb-0 hidden md:block">
           {{ filterLabel }}
@@ -127,7 +127,7 @@
         <ContextMenu v-for="torrent in store.filtered" :key="torrent.hash">
           <ContextMenuTrigger as-child>
             <div
-              class="hidden md:grid grid-cols-12 gap-4 py-3 px-4 border-b border-neutral-700 cursor-pointer items-center text-sm"
+              class="hidden md:grid grid-cols-12 gap-4 py-2 px-2 mx-2 border-b border-neutral-800 cursor-pointer items-center text-sm"
               :class="{
                 'bg-blue-500 text-white hover:bg-blue-500': store.selected?.hash === torrent.hash,
                 'hover:bg-neutral-800': store.selected?.hash !== torrent.hash,

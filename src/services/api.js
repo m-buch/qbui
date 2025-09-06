@@ -94,6 +94,21 @@ export const torrentsApi = {
       deleteFiles: deleteFiles,
     }),
 
+  // Get detailed properties for a torrent
+  properties: (hash) => apiRequest(`/torrents/properties?hash=${hash}`),
+
+  // Get trackers for a torrent
+  trackers: (hash) => apiRequest(`/torrents/trackers?hash=${hash}`),
+
+  // Get peers for a torrent
+  peers: (hash) => apiRequest(`/sync/torrentPeers?hash=${hash}`),
+
+  // Get HTTP sources (web seeds) for a torrent
+  webseeds: (hash) => apiRequest(`/torrents/webseeds?hash=${hash}`),
+
+  // Get files for a torrent
+  files: (hash) => apiRequest(`/torrents/files?hash=${hash}`),
+
   getCategories: () => apiRequest('/torrents/categories'),
 
   setCategory: (hashes, category) =>

@@ -1,6 +1,6 @@
 <template>
   <!-- Desktop Layout -->
-  <div class="flex flex-col h-screen bg-neutral-900 text-white">
+  <div class="flex flex-col h-screen bg-neutral-950 text-neutral-200">
     <!-- Header -->
     <TheHeader />
 
@@ -22,7 +22,7 @@
             <template v-if="uiStore.isTorrentPanelActive || uiStore.isSearchActive">
               <!-- Resize Handle -->
               <ResizableHandle
-                class="h-2 dark:bg-neutral-700 hover:bg-neutral-600 transition-colors"
+                class="h-2 dark:bg-neutral-800 hover:bg-neutral-700 transition-colors"
               />
 
               <!-- Torrent Details Panel -->

@@ -1,7 +1,7 @@
 <template>
-  <div class="p-6 bg-neutral-900">
+  <div class="p-0 md:p-4">
     <!-- Search Input -->
-    <div class="mb-4 px-4 md:px-0">
+    <div class="mb-2 px-4 md:px-0">
       <div class="flex items-center justify-between gap-4">
         <div class="flex items-center gap-1">
           <Button
@@ -108,7 +108,7 @@
       <ContextMenu v-for="(result, index) in store.sortedResults" :key="index">
         <ContextMenuTrigger as-child>
           <div
-            class="hidden md:grid grid-cols-12 gap-4 py-3 px-4 border-b border-neutral-700 cursor-pointer items-center text-sm"
+            class="hidden md:grid grid-cols-12 gap-4 py-2 px-2 mx-2 border-b border-neutral-800 cursor-pointer items-center text-sm"
             :class="{
               'bg-blue-500 text-white hover:bg-blue-500': store.selected === result,
               'hover:bg-neutral-800': store.selected !== result,
