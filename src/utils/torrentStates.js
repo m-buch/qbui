@@ -33,7 +33,7 @@ export const StateGroups = {
 }
 
 export function isInStateGroup(torrent, groupName) {
-  return StateGroups[groupName]?.includes(torrent.state)
+  return Boolean(StateGroups[groupName]?.includes(torrent.state))
 }
 
 export const TorrentFilterLabels = {
