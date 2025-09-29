@@ -1,5 +1,5 @@
 # qBUI
-<img width="1918" height="881" alt="image" src="https://github.com/user-attachments/assets/8cd25f1b-58b8-4302-81c3-1ffba22997a0" />
+<img width="1913" height="888" alt="image" src="https://github.com/user-attachments/assets/57a84ed2-d945-419b-bc37-5938f432c9da" />
 
 This project is a work-in-progress replacement for the default qBittorrent Web UI, featuring a Vue 3 frontend designed with shadcn components. The goal is to address some of my complaints with other existing solutions, namely that the UI feels dated, or feels more mobile-focused than desktop-focused. I am not a fan of an excessive amount of largely unnecessary information being displayed at all times either, which I have tried to minimize. 
 
